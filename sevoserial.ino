@@ -20,15 +20,13 @@ void loop()
   }
   while(Serial.available()>0)
   { 
-    num=Serial.read();
+    num=Serial.read();//transform ascii to real
     num=num-48;
     val=val*10;
     val=val+num;
     delay(100);
     }
   Serial.println(val);
-   myservo.write(val);                  // sets the servo position according to the scaled value 
-  delay(15);
-
-                           // waits for the servo to get there 
+   myservo.write(val);// sets the servo position according to the scaled value 
+  delay(15);// waits for the servo to get there 
 } 
